@@ -25,6 +25,7 @@ namespace ServerClientWindForms
         }
         
         SimpleTcpClient client;
+        
         private void btnConnect_Click(object sender, EventArgs e)
         {
             try
@@ -39,11 +40,12 @@ namespace ServerClientWindForms
             
             }
         }
-        private SimpleTcpClient simpleTcpClient;
+       
+        
 
         private void TCPServer_Load(object sender, EventArgs e)
         {
-            simpleTcpClient  = new SimpleTcpClient(txtIP.Text);
+            client = new SimpleTcpClient(txtIP.Text);
             client.Events.Connected += Events_Connected;
             client.Events.DataReceived += Events_DataReceived;
             client.Events.Disconnected += Events_Disconnected;
